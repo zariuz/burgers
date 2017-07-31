@@ -1,0 +1,123 @@
+.first {
+    background-image: url('../../img/background/background-first.png');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.first-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.first-header__logo {
+    margin-right: auto;
+}
+
+.first-header__navigation {
+    margin-right: rem(15px);
+}
+
+.first-header__list {
+    margin: 0;
+    padding: 0;
+}
+
+.first-header__item {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    &:after {
+        display: inline-block;
+        vertical-align: middle;
+        content: ' ';
+        @include circle(5px, #fff);
+        margin: 0 12px;
+    }
+    &:last-child:after {
+        display: none;
+    }
+}
+
+.first-header__link {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.42;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    transition: .5s;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.first-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.first-main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-items: center;
+    padding-bottom: 15%;
+}
+
+.first-main__img, .first-main__text {
+    flex-basis: 50%;
+    display: flex;
+}
+
+.first-main__img {
+    align-items: center;
+}
+
+.first-main__text {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.first-main__do {
+    color: #f9b43b;
+    font-family: 'Gagalin';
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1.42;
+    margin: 0;
+    padding-top: 60px;
+}
+
+.first-main__natural {
+    color: #ffffff;
+    font-family: 'Lifehack';
+    font-size: 65px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.first-down {
+    width: 15px;
+    height: 15px;
+    border-bottom-left-radius: 3px;
+    border: 2px solid #f3f3f3;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    margin-left: -7px;
+}

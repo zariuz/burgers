@@ -177,7 +177,7 @@ ul {
   left: -6px; }
 
 .first {
-  background-image: url("../../img/background/background-first.png");
+  background-image: url("../img/background/background-first.png");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -201,6 +201,20 @@ ul {
 
 .first-header__logo {
   margin-right: auto; }
+
+.first-header__menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .first-header__navigation {
   margin-right: 0.9375rem; }
@@ -319,6 +333,7 @@ ul {
   font-family: 'Lifehack';
   font-size: 65px;
   font-weight: 500;
+  text-transform: lowercase;
   line-height: 1; }
 
 .first-down {
@@ -341,7 +356,7 @@ ul {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-image: url("../../img/background/background-best.png");
+  background-image: url("../img/background/background-best.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
@@ -391,6 +406,7 @@ ul {
 .best-main__caption {
   padding-top: 13px;
   font-family: 'Lifehack';
+  font-weight: 500px;
   font-size: 24px;
   line-height: 28px; }
 

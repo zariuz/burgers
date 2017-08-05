@@ -18,24 +18,24 @@
     padding-top: 60px;
     text-align: center;
     padding: 0;
-    margin-bottom: rem(60px);
+    padding-bottom: 60px;
 }
 
 .best-main__list {
     display: flex;
     justify-content: space-between;
+
 }
 
 .best-main__item {
-    padding-top: 60px;
     width: 300px;
     text-align: center;
 }
 
 .best-main__img {
     display: inline-block;
-    width: 140px;
-    height: 120px;
+    width: 95px;
+    height: 100px;
     background-repeat: no-repeat;
     background-position: center;
 }

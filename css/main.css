@@ -78,6 +78,7 @@ ul {
 
 .container {
   width: 940px;
+  min-height: 650px;
   margin: 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -217,7 +218,7 @@ ul {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 6px; }
+  padding-top: 7px; }
 
 .first-header__logo {
   margin-right: auto;
@@ -366,7 +367,7 @@ ul {
   display: flex;
   background-image: url("../img/background/background-best.png");
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center;
   background-size: cover;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -376,6 +377,26 @@ ul {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+
+.best-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 76px; }
 
 .best-main__text {
   color: #2f3234;
@@ -400,7 +421,7 @@ ul {
   justify-content: space-between; }
 
 .best-main__item {
-  width: 300px;
+  width: 316px;
   text-align: center; }
 
 .best-main__img {
@@ -502,3 +523,33 @@ ul {
   transition: .5s; }
   .review__view:hover {
     background-color: #232527; }
+
+.burgers {
+  background-image: url("../img/background/background-burgers.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover; }
+
+.team {
+  background-image: url("../img/background/background-team.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.menu {
+  background-image: url("../img/background/background-menu.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover; }
+
+.form {
+  background-image: url("../img/background/background-form.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover; }
+
+.contacts {
+  background-image: url("../img/background/background-contacts.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover; }

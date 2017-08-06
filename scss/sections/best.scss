@@ -2,10 +2,18 @@
     display: flex;
     background-image: url('../img/background/background-best.png');
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center;
     background-size: cover;
     justify-content: center;
     align-items: center;
+}
+
+.best-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 76px;
 }
 
 .best-main__text {
@@ -28,7 +36,7 @@
 }
 
 .best-main__item {
-    width: 300px;
+    width: 316px;
     text-align: center;
 }
 

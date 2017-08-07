@@ -3,4 +3,53 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover;
+    position: relative;
+}
+
+.contacts-map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.contacts-footer {
+    background: url('../img/background/footer.jpg') bottom no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    padding: .624rem 0;
+}
+
+.contacts-footer__center {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 58.75rem;
+    width: 93%;
+    margin: 0 auto;
+}
+
+.contacts-footer__info {
+    width: 50%;
+}
+
+.contacts-footer__address {
+    color: #fff;
+    font-weight: 300;
+}
+
+.contacts-footer__link {
+    text-decoration: none;
+    color: $orange;
+    font-weight: 700;
+}
+
+.contacts-footer__social {
+    width: 50%;
 }

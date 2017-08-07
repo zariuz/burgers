@@ -3,4 +3,98 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
+
 }
+
+.team-main {
+    background: rgba(48,51,50,.93);
+    padding: 3% 2% 0 5%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+}
+
+
+.team-text {
+    color: $yellow;
+    font-family: 'Gagalin';
+    font-size: 4.5rem;
+    margin-bottom: 11%;
+}
+
+.team-accordeon {
+    color: #fff;
+}
+
+.team-accordeon__item {
+    margin-bottom: 1.5rem;
+}
+
+.team-accordeon__item--activ .team-accordeon__name:hover {
+    color: $yellow;
+}
+
+.team-accordeon__item--activ:hover .team-accordeon__content {
+    transition: 0.5s;
+    height: 6.25rem;
+}
+
+.team-accordeon__name {
+    color: #fff;
+    font-size: .875rem;
+    font-family: 'Gagalin';
+    text-decoration: none;
+    position: relative;
+    display: block;
+    margin-bottom: 1.25rem;
+        &::before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: -20px;
+        display: block;
+        height: 7px;
+        width: 9px;
+        background: url('../../img/icons/triangle.svg') no-repeat;
+    } 
+}
+
+.team-accordeon__content {
+    height: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.team-accordeon__image {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.team-accordeon__picture {
+    width: 6.25rem;
+    height: 6.25rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.team-accordeon__text {
+    width: 70%;
+}
+
+.team-accordeon__title {
+    font-size: .875rem;
+    font-weight: 700;
+    margin-bottom: .9rem;
+}
+
+.team-accordeon__text-content {
+    font-size: .875rem;
+    font-weight: 300;
+}
+
+

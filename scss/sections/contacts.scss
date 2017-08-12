@@ -1,55 +1,133 @@
 .contacts {
     background-image: url('../img/background/background-contacts.png');
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: center;
     background-size: cover;
-    position: relative;
 }
 
 .contacts-map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .contacts-footer {
     background: url('../img/background/footer.jpg') bottom no-repeat;
     background-size: cover;
     position: absolute;
+    width: 100%;
     bottom: 0;
     left: 0;
     right: 0;
     left: 0;
-    padding: .624rem 0;
 }
 
 .contacts-footer__center {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center;
-    max-width: 58.75rem;
-    width: 93%;
-    margin: 0 auto;
+  
+    @include phones {
+      flex-direction: column;
+    }
+}
+
+
+
+.contacts-footer__info, .contacts-footer__social {
+    display: inline-block;
+    width: 50%;
+
+    @include phones {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .contacts-footer__info {
-    width: 50%;
+    padding: rem(5px) 0 rem(8px) 0;
+
+    @include phones {
+        padding-top: rem(20px);
+
+    }
+}
+
+.contacts-footer__social {
+    padding-top: rem(17px);
+
+    @include phones {
+        padding-top: rem(15px);
+        padding-bottom: rem(20px);
+    }
 }
 
 .contacts-footer__address {
     color: #fff;
     font-weight: 300;
+    padding-bottom: rem(1px);
+
+    @include phones {
+        padding-bottom: rem(5px);
+    }
 }
 
 .contacts-footer__link {
+    display: inline-block;
     text-decoration: none;
     color: $orange;
     font-weight: 700;
+    padding-left: rem(3px);
 }
 
-.contacts-footer__social {
-    width: 50%;
+.contacts-footer__svg-tell {
+    display: inline-block;
+    width: rem(12px);
+    height: rem(11px);
+    vertical-align: middle;
+    fill:  $orange;
+}
+
+.contacts-footer__list {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+  
+    @include phones {
+        text-align: center;
+    }
+}
+
+.contacts-footer__social-list {
+    display: inline-block;
+    margin-right: rem(16px);
+  
+    @include  phones {
+        margin-right: rem(25px);
+    }
+}
+
+.contacts-footer__link {
+    display: inline-block;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.contacts-footer__text {
+    font-size: 0;
+}
+
+.contacts-footer__svg {
+    display: inline-block;
+    width: rem(23px);
+    height: rem(23px);
+    vertical-align: middle;
+    fill: #fff;
+    opacity: 0.3;
+
+    &:hover {
+        opacity: 1;
+    }
 }

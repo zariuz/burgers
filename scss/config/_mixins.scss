@@ -5,7 +5,15 @@
   background-color: $color;
 }
 
-//responsive
-@function rem($px) {
-  @return $px / 16px+0rem;
+
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phones {
+  @media (max-width: $phones) {
+    @content;
+  }
 }

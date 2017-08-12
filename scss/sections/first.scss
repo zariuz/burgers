@@ -3,40 +3,42 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-}
-
-.first-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .first-header {
     width: 100%;
+    padding-top: rem(12px);
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-top: 7px;
+    z-index: 1;
+
+    @include phones {
+        padding-top: rem(18px);
+    }
 }
 
 .first-header__logo {
-    margin-right: auto;
-    margin-left: -3px;
-    margin-top: 7px;
+    margin-left: rem(-2px);
+    width: rem(90px);
+    height: rem(69px);
+    background-image: url(../img/icons/logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .first-header__menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: rem(8px);
 }
 
 .first-header__navigation {
-    margin-right: 10px;
+    margin-right: rem(10px);
+
+    @include tablets {
+        display: none;
+    }
 }
 
 .first-header__list {
@@ -48,21 +50,23 @@
     display: inline-block;
     vertical-align: middle;
     white-space: nowrap;
+
     &:after {
         display: inline-block;
         vertical-align: middle;
         content: ' ';
-        @include circle(5px, #fff);
-        margin: 0 12px;
+        @include circle(rem(5px), #fff);
+        margin: 0 rem(12px);
     }
+
     &:last-child:after {
         display: none;
     }
 }
 
 .first-header__link {
-    color: #ffffff;
-    font-size: 13px;
+    color: #fff;
+    font-size: rem(13px);
     font-weight: 500;
     line-height: 1.42;
     text-transform: uppercase;
@@ -70,71 +74,152 @@
     display: inline-block;
     vertical-align: middle;
     transition: .5s;
+
     &:hover {
         text-decoration: underline;
     }
 }
 
 .first-header__btn {
-    margin-top: 5px;
+    margin-top: rem(5px);
+}
+
+.first-header__hamburger-link {
+	vertical-align: middle;
+	position: relative;
+	height: rem(22px);
+	align-items: center;
+	margin-left: rem(30px);
+    display: none;
+
+    @include tablets {
+        display: flex;
+    }
 }
 
 
 .first-main {
     width: 100%;
+    height: 100%;
+    z-index: 1;
     display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
     align-items: center;
-    margin-left: 21px;
-    padding-bottom: 17%;
-}
+    justify-content: center;
+    margin-right: rem(-29px);
 
-.first-main__img, .first-main__text {
-    flex-basis: 50%;
-    display: flex;
+    @include tablets() {
+        margin-right:0;
+        flex-direction: column;
+    }
+
 }
 
 .first-main__img {
-    align-items: center;
+    width: 50%;
+    margin-top: rem(-6px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 
+    @include tablets {
+        width: 100%;
+        margin-top:0;
+        margin-right:0;
+        text-align: center;
+        margin-bottom: rem(20px);
+    }
+
+    @include phones {
+        width: 90%;
+        align-items: flex-end;
+        margin-bottom: 0;
+    }
+}
+
+.first-main__img-backgraund {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+
+    @include tablets {
+        height: 100%;
+
+    }
+
+    @include phones {
+      max-height: rem(256px);
+        height: auto;
+    }
 }
 
 .first-main__text {
-    flex-direction: column;
-    justify-content: center;
+    width: 50%;
+    padding-top: rem(50px);
+    margin-left: rem(-6px);
+    padding-left: rem(1px);
+
+    @include tablets {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-left:0;
+        padding-left: 20%;
+        padding-right: 20%;
+        padding: 0 10%;
+        height: auto;
+    }
+
+    @include phones {
+        padding: 0;
+    }
+
 }
 
 .first-main__do {
-    color: #f9b43b;
+    color: $yellow;
     font-family: 'Gagalin';
-    font-size: 72px;
+    font-size: rem(72px);
     font-weight: 400;
     line-height: 1.42;
     margin: 0;
-    padding-top: 60px;
+    margin-bottom: rem(13px);
+    white-space: nowrap;
+
+    @include phones {
+        font-size: rem(63px);
+    }
 }
 
 .first-main__natural {
     color: #ffffff;
     font-family: 'Lifehack';
-    font-size: 65px;
+    font-size: rem(63px);
     font-weight: 500;
+    line-height: rem(61px);
     text-transform: lowercase;
-    line-height: 1;
-    margin-top: 10px;
 }
 
-.first-down {
-    width: 15px;
-    height: 15px;
-    border-bottom-left-radius: 3px;
-    border: 2px solid #f3f3f3;
+.first-next {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    @include phones {
+        height: 16%;
+    }
+}
+
+.first-next__down {
+    display: block;
+    width: rem(20px);
+    height: rem(20px);
+    border-bottom-left-radius: rem(3px);
+    border: rem(2px) solid #f3f3f3;
     border-top: none;
     border-right: none;
     transform: rotate(-45deg);
-    position: absolute;
-    bottom: 7%;
-    left: 50%;
-    margin-left: -7px;
+    transition: .3s;
+    z-index: 1;
 }

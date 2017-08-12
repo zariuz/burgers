@@ -9,28 +9,38 @@
 
 .team-main {
     background: rgba(48,51,50,.93);
-    padding: 3% 2% 0 5%;
+    padding: 5% 6% 0 7%;
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
-    left: 50%;
+    width: 50%;
+
+    @include tablets {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 
 .team-text {
     color: $yellow;
     font-family: 'Gagalin';
-    font-size: 4.5rem;
+    font-size: rem(72px);
     margin-bottom: 11%;
 }
 
 .team-accordeon {
     color: #fff;
+    padding-left: rem(20px);
 }
 
 .team-accordeon__item {
-    margin-bottom: 1.5rem;
+    margin-bottom: rem(13px);
 }
 
 .team-accordeon__item--activ .team-accordeon__name:hover {
@@ -48,35 +58,89 @@
     font-family: 'Gagalin';
     text-decoration: none;
     position: relative;
-    display: block;
-    margin-bottom: 1.25rem;
-        &::before {
-        content: "";
+    display: inline-block;
+    margin-bottom: rem(15px);
+
+    @include tablets {
+        font-size: rem(24px);
+    }
+
+
+    &::before {
+        content: '';
         position: absolute;
-        top: 7px;
-        left: -20px;
-        display: block;
-        height: 7px;
-        width: 9px;
-        background: url('../../img/icons/triangle.svg') no-repeat;
-    } 
+        bottom: 0;
+        left: rem(-20px);
+        border-top: rem(6px) solid #fff;
+        border-bottom: rem(6px) solid transparent;
+        border-right:rem(6px) solid transparent;
+        border-left: rem(6px) solid transparent ;
+        transition: 0.7s;
+    
+        @include tablets {
+            font-size: rem(24px);
+            bottom: 24%;
+        }
+    }
 }
 
 .team-accordeon__content {
+    display: flex;
+    margin-bottom: rem(10px);
     height: 0;
     overflow: hidden;
-    display: flex;
+    transition: 0.7s;
+
+    @include tablets {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.team-accordeon__item--activ:hover {
+    margin-bottom: rem(37px);
+
+    .team-accordeon__name {
+        color: $yellow;
+        
+        &:before {
+            bottom: rem(6px);
+            transform: rotate(180deg);
+            border-top: rem(6px) solid $yellow;
+            transition: 0.7s;
+        }
+
+
+        @include tablets {
+            bottom: 40%;
+        }
+    }
+
+    .team-accordeon__content {
+        transition: 0.7s;
+        height: rem(100px);
+
+        @include tablets {
+            height: rem(200px);
+        }
+  
+    }
 }
 
 .team-accordeon__image {
     width: 30%;
     display: flex;
     justify-content: center;
+
+    @include tablets {
+        margin-bottom: rem(19px);
+    }
 }
 
 .team-accordeon__picture {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: rem(100px);
+    height: rem(100px);
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -87,13 +151,13 @@
 }
 
 .team-accordeon__title {
-    font-size: .875rem;
+    font-size: rem(14px);
     font-weight: 700;
-    margin-bottom: .9rem;
+    margin-bottom: rem(15px);
 }
 
 .team-accordeon__text-content {
-    font-size: .875rem;
+    font-size: rem(14px);
     font-weight: 300;
 }
 

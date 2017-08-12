@@ -1,13 +1,18 @@
+//Media
+@import "config/media.scss";
+
 //Config
 
-@import "config/_mixins.scss";
 @import "config/_variables.scss";
+@import "config/_mixins.scss";
+@import "layout/base.scss";
 
 //Base
 
 @import "layout/fonts.scss";
-@import "layout/base.scss";
 @import "layout/adjustment.scss";
+
+//Section
 
 @import "sections/navigation.scss";
 @import "sections/first.scss";

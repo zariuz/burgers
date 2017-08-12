@@ -1,52 +1,76 @@
 .navigation {
     position: fixed;
-    width: 16px;
-    display: flex;
-    top: 130px;
-    right: 87px;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+    top: 13.8%;
+    right: 4.6%;
+    z-index: 12;
+
+    @include tablets {
+        z-index: -1000;
+    }
 }
 
 .navigation__list {
     list-style: none;
+    width: 100%;
 }
 
 .navigation__item {
-    padding: 6px 8px 9px;
+    margin-bottom: rem(5px);
+
+    &:last-child {
+        padding-bottom: 0;
+    }
 }
 
 .navigation__link {
     display: block;
-    background-color: white;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
+    width: rem(16px);
+    height: rem(16px);
     position: relative;
+    cursor: pointer;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: rem(-3px);
+        margin-top: rem(-3px);
+        width: rem(6px);
+        height: rem(6px);
+        border-radius: rem(3px);
+        background-color: #fff;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: rem(6px);
+        height: rem(6px);
+        margin-left: rem(-3px);
+        margin-top: rem(-3px);
+        border: rem(1px) solid #ffffff;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    &:hover:after {
+        width: rem(16px);
+        height: rem(16px);
+        transform: translate(rem(-5px), rem(-5px));
+        transition: 0.3s;
+    }
 }
 
-.navigation__link-select:before {
-    content: "";
-    display: block;
-    border: 1px solid white;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    position: absolute;
-    top: -6px;
-    left: -6px;
+.navigation__link-select .navigation__link:after {
+    transform: translate(0);
+    width: rem(16px);
+    height: rem(16px);
+    margin-left: rem(-8px);
+    margin-top: rem(-8px);
     cursor: default;
-}
-
-.navigation__link:hover:before {
-    content: "";
-    display: block;
-    border: 1px solid white;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    position: absolute;
-    top: -6px;
-    left: -6px;
 }

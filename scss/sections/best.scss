@@ -4,61 +4,99 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    justify-content: center;
     align-items: center;
-}
-
-.best-main {
-    display: flex;
+    justify-content: center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 76px;
+    z-index: 0;
 }
 
 .best-main__text {
-    color: #2f3234;
+    color: $dark;
     font-family: 'Gagalin';
-    font-size: 72px;
+    font-size: rem(72px);
     font-weight: 400;
-    line-height: 1.42;
     margin: 0;
-    padding-top: 60px;
     text-align: center;
-    padding: 0;
-    padding-bottom: 60px;
+    padding-bottom: rem(60px);
+
+    @include phones {
+        margin-bottom: 5%;
+        text-align: center;
+  }
 }
 
 .best-main__list {
     display: flex;
-    justify-content: space-between;
+    height: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    @include phones {
+        flex-direction: column;
+        align-items: center;
+    }
 
 }
 
 .best-main__item {
-    width: 316px;
+    max-width: 33%;
+    height: 100%;
     text-align: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include phones {
+        max-width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 3%;
+    }
 }
 
 .best-main__img {
-    display: inline-block;
-    width: 95px;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 100%;
+    margin-bottom: rem(32px);
+    flex: 1;
+
+    @include phones {
+      margin-right: rem(20px);
+      margin-bottom: 0;
+    }
 }
 
 .best-main__caption {
-    padding-top: 13px;
     font-family: 'Lifehack';
-    font-weight: 500px;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: rem(24px);
+    font-weight: 500;
+    margin-bottom: rem(14px);
+    line-height: 1.2;
+    display: block;
 }
 
 .best-main__info {
-    padding-top: 11px;
-    font-size:  14px;
-    line-height: 24px;
-    font-weight: 300px;
+    display: block;
+    opacity: 0.8;
+    font-size: rem(14px);
+    font-weight: 300;
+    line-height: rem(24px);
+}
+
+.best-main__pic {
+    width: rem(97px);
+    height: rem(89px);
+
+    &-red {
+        fill: $orange;
+    }
+
+    &-yello  {
+        fill: $yellow;
+    }
+    
+    &-green {
+        fill: $green;
+    }
 }

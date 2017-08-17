@@ -229,7 +229,8 @@ ul {
   height: 4.3125rem;
   background-image: url(../img/icons/logo.svg);
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  z-index: 1; }
 
 .first-header__menu {
   display: -webkit-box;
@@ -244,22 +245,74 @@ ul {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 0.5rem; }
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding-top: 0.9375rem; }
 
 .first-header__navigation {
   margin-right: 0.625rem; }
   @media screen and (max-width: 768px) {
     .first-header__navigation {
-      display: none; } }
+      display: block;
+      position: fixed;
+      top: -100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      -webkit-transition: .6s;
+      -o-transition: .6s;
+      transition: .6s;
+      background-color: rgba(47, 50, 52, 0.98);
+      margin-right: 0; } }
+
+.first-header__navigation-activ {
+  display: block;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+  top: 0;
+  width: 100%;
+  height: 100%; }
 
 .first-header__list {
-  margin: 0;
-  padding: 0; }
+  display: inline-block;
+  z-index: 10; }
+  @media screen and (max-width: 768px) {
+    .first-header__list {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 100%; } }
 
 .first-header__item {
   display: inline-block;
   vertical-align: middle;
   white-space: nowrap; }
+  @media screen and (max-width: 768px) {
+    .first-header__item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
   .first-header__item:after {
     display: inline-block;
     vertical-align: middle;
@@ -269,6 +322,9 @@ ul {
     border-radius: 0.15625rem;
     background-color: #fff;
     margin: 0 0.75rem; }
+    @media screen and (max-width: 768px) {
+      .first-header__item:after {
+        margin: 0.625rem auto; } }
   .first-header__item:last-child:after {
     display: none; }
 
@@ -310,7 +366,6 @@ ul {
 .first-main {
   width: 100%;
   height: 100%;
-  z-index: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -456,8 +511,60 @@ ul {
   transform: rotate(-45deg);
   -webkit-transition: .3s;
   -o-transition: .3s;
-  transition: .3s;
-  z-index: 1; }
+  transition: .3s; }
+
+.first-next__down:hover {
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+  -webkit-transform: scale(1.3) rotate(-45deg);
+  -ms-transform: scale(1.3) rotate(-45deg);
+  transform: scale(1.3) rotate(-45deg); }
+
+.first-header__hamburger-link {
+  width: 1.5625rem;
+  height: 1.5rem;
+  margin-left: 1.875rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none; }
+  @media screen and (max-width: 768px) {
+    .first-header__hamburger-link {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      z-index: 1; } }
+
+.first-header__hamburger-menu {
+  display: block;
+  width: 1.5rem;
+  height: 0.25rem;
+  position: relative;
+  background-color: #fff;
+  border-radius: 0.125rem; }
+  .first-header__hamburger-menu:before {
+    content: "";
+    width: 1.5rem;
+    height: 0.25rem;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 0.125rem;
+    top: 0.625rem; }
+  .first-header__hamburger-menu:after {
+    content: "";
+    width: 1.5rem;
+    height: 0.25rem;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 0.125rem;
+    top: -0.625rem; }
 
 .best {
   display: -webkit-box;

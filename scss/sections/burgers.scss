@@ -1,6 +1,329 @@
 .burgers {
-    background-image: url('../img/background/background-burgers.png');
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
+    background: linear-gradient(180deg,#f9b43b 0,#eb8c38 40%,#eb8c38 60%,#eb8c38 0,#f9b43b);
 }
+
+.burgers-center {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.burger-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.burger-box__arrow {
+    width: rem(30px);
+    height: rem(30px);
+    cursor: pointer;
+    position: absolute;
+}
+
+.burger-box__left,.burger-box__right {
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.burger-box__left-icon, .burger-box__right-icon {
+    width: 100%;
+    height: 100%;
+    fill: #fff; 
+}
+
+.burger-box__left {
+    left: rem(-6px);
+}
+  
+.burger-box__left-icon {
+    transform: rotate(90deg);
+    transition: .3s;
+
+    &:hover {
+        transform: rotate(90deg) scale(1.2);
+        transition: .3s;
+    }
+}
+
+
+.burger-box__right {
+    right: rem(-6px);
+}
+
+.burger-box__right-icon {
+    transform: rotate(-90deg);
+    transition: .3s;
+
+    &:hover {
+        transform: rotate(-90deg) scale(1.2);
+        transition: .3s;
+   }
+}
+
+.burger-box__menu {
+    width: 100%;
+    font-size: 0;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.burger-box__item {
+    white-space: normal;
+    display: inline-flex;
+    position: relative;
+    padding-bottom:rem(90px);
+  
+    @include tablets {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom:0;
+        padding-top:rem(90px);
+    }
+}
+
+.burger-mix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: rem(90px);
+    height: rem(90px);
+    background-color: rgba(227,80,40,.4);
+    border-radius: rem(5px);
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+    flex-direction: column;
+    cursor: pointer;
+
+    &:hover {
+        transition: 0.1s;
+        background-color: rgba(227,80,40,.7);
+
+        .burger-mix__table-box {
+            width:rem(270px);
+            height:rem(332px);
+            padding: rem(25px);
+            transition: 0.3s;
+
+            @include phones {
+                height: rem(382px);
+                padding: rem(15px);
+            }
+        }
+
+        .burger-mix__table {
+            transform: scale(1);
+            transition: .2s;
+            transition-delay: 0.2s; 
+        }
+    }       
+}
+
+.burger-mix__icon {
+    width: 100%;
+    height: 50%;
+    fill: #fff;
+}
+
+.burger-mix__text {
+    color: #fff;
+    font-weight: 200;
+    text-align: center;
+    font-family: 'Gagalin';
+    font-size: rem(14px);
+}
+
+.burger-mix__table-box {
+    position: absolute;
+    top: 0;
+    left: rem(90px);
+    width: 0;
+    height: 0;
+    background-color: rgba(255,255,255, 0.9);
+    border-radius: rem(5px);
+    padding: 0;
+    transition: 0.2s;
+    font-size: rem(14px);
+}
+
+.burger-mix__table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    transform: scale(0);
+    transition: .1s;
+}
+
+.burger-mix__table-cell:last-child {
+    text-align: right;
+}
+
+.burger-calories {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: rem(65px);
+    height: rem(90px);
+    opacity: 0.5;
+    font-family: 'Gagalin';
+    display: flex;
+    flex-direction: column;
+  
+    @include tablets {
+        top: 0;
+        right: 0;
+        left: auto;
+    }
+}
+
+.burger-calories__icon {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    fill: #fff ;
+}
+
+.burger-calories__number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: rem(20px);
+    line-height: 1;
+    color: #fff;
+    margin-left: -25%;
+    margin-top: -15%;
+}
+
+.burger-calories__text {
+    color: #fff;
+    text-align: center;
+    font-size: rem(20px);
+    line-height: 1;
+}
+
+.burger__left, .burger__right {
+    flex: 1;
+  
+    @include tablets {
+        width: 85%;
+        text-align: center;
+    }
+}
+
+.burger__left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  
+    @include tablets {
+        margin-bottom: rem(20px);
+    }
+  
+    @include phones {
+        margin-bottom: rem(5px);
+    }
+}
+
+.burger__left-img {
+    max-width: 99%;
+
+    @include tablets {
+        width: 75%;
+    }
+  
+    @include phones {
+        width: 80%;
+    }  
+}
+
+.burger__right-title {
+    color: #fff;
+    font-size: rem(72px);
+    font-family: 'Gagalin';
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: rem(40px);
+    line-height: rem(65px);
+  
+    @include tablets {
+        font-size: rem(50px);
+        margin-bottom: rem(30px);
+        text-align: center;
+  
+    }
+  
+    @include phones {
+        margin-bottom: rem(10px);
+        line-height: 1;  
+    }
+}
+
+.burger__right-text {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: rem(20px);
+    line-height: rem(24px);
+    width: 90%;
+
+    @include tablets {
+        text-align: center;
+        font-size: rem(13px);
+    }
+}
+
+.burger__right-price {
+    display: flex;
+    align-items: flex-end;
+  
+    @include tablets {
+        justify-content: center;
+    }
+}
+
+.burger__right-order {
+    display: inline-block;
+    line-height: 1;
+    margin-right: rem(30px);
+
+    @include tablets {
+        font-size: rem(40px);
+    }
+
+    @include phones {
+        font-size: rem(24px);
+    }
+}
+
+.burger__right-num {
+    display: inline-block;
+    color: $orange;
+    font-size: rem(72px);
+    font-family: 'Gagalin';
+    font-weight: 400;
+    margin: 0;
+
+    @include phones {
+        font-size: rem(50px);
+    }
+}
+
+.burger__right-rub {
+    display: inline-block;
+    font-size: rem(30px);
+    color: $orange;
+    font-family: 'Gagalin';
+    font-weight: 400;
+    margin: 0;
+
+    @include phones {
+        font-size: rem(24px);
+    }
+}
+

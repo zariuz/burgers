@@ -109,6 +109,7 @@
     border-radius: rem(5px);
     background-color: #fff;
     border: rem(2px) solid transparent;
+    outline: none;
 
     &:focus {
         border: rem(2px) solid $yellow;
@@ -125,6 +126,7 @@
     border: rem(2px) solid transparent;
     background-color: #fff;
     resize: none;
+    outline: none;
 
     &:focus {
         border: rem(2px) solid $yellow;
@@ -231,4 +233,5 @@
     font-weight: 500;
     color: #fff;
     cursor: pointer;
+    outline: none;
 }

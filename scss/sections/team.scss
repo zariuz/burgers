@@ -41,6 +41,10 @@
 
 .team-accordeon__item {
     margin-bottom: rem(13px);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .team-accordeon__item--activ .team-accordeon__name:hover {

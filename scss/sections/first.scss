@@ -114,23 +114,14 @@
     &:hover {
         text-decoration: underline;
     }
+
+    @include tablets {
+        font-size: 20px;
+    }
 }
 
 .first-header__btn {
     margin-top: rem(5px);
-}
-
-.first-header__hamburger-link {
-	vertical-align: middle;
-	position: relative;
-	height: rem(22px);
-	align-items: center;
-	margin-left: rem(30px);
-    display: none;
-
-    @include tablets {
-        display: flex;
-    }
 }
 
 
@@ -175,11 +166,6 @@
     display: inline-block;
     max-width: 100%;
     height: auto;
-
-    @include tablets {
-        height: 100%;
-
-    }
 
     @include phones {
       max-height: rem(256px);

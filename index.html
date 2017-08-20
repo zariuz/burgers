@@ -7,6 +7,7 @@
     <title>Лучшие Бургеры</title>
     <meta name="viewport">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 </head>
@@ -38,7 +39,7 @@
                                     <li class="first-header__item">
                                         <a class="first-header__link" href="">Контакты</a>
                                     </li>
-                                </ul>                             
+                                </ul>                          
                             </nav>
                             <div class="first-header__btn">
                                 <a href="#" class="order-link">Заказать</a>
@@ -50,7 +51,7 @@
                     </header>
                     <main class="first-main">
                         <div class="first-main__img">
-                            <img src="img/content/burger.png" alt="" class="first-main__img-leftgraund">
+                            <img src="img/content/burger.png" alt="" class="first-main__img-backgraund">
                         </div>
                         <div class="first-main__text">
                             <h2 class="first-main__do">Мы делаем</h2>
@@ -105,11 +106,6 @@
             <section class="section burgers">
                 <div class="container burgers-center">
                     <div class="burger-box">
-                        <div class="burger-box__arrow burger-box__left">
-                            <svg class="burger-box__left-icon">
-                                <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
-                            </svg>
-                        </div>
                         <ul class="burger-box__menu">
                             <li class="burger-box__item burger-box__item-active">
                                 <div class="burger-mix ">
@@ -209,6 +205,11 @@
                                 </div>
                             </li>
                         </ul>
+                        <div class="burger-box__arrow burger-box__left">
+                            <svg class="burger-box__left-icon">
+                                <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
+                            </svg>
+                        </div>
                         <div class="burger-box__arrow burger-box__right">
                             <svg class="burger-box__right-icon">
                                 <use xlink:href="./img/sprite.svg#arrow-scroll"></use>
@@ -460,6 +461,7 @@
             </section>
             <section class="section contacts">
                 <div class="contacts-map">
+                    <div id="map" style="width: 1920px; height: 643px"></div>
                     <footer class="contacts-footer">
                         <div class="contacts-footer__center container">
                             <div class="contacts-footer__info">
@@ -542,7 +544,9 @@
         </ul>
     </div>
 
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

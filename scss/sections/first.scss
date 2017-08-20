@@ -46,9 +46,10 @@
         height: 100%;
         left: 0;
         right: 0;
-        transition:  .6s ;
+        transition:  .4s ;
         background-color: rgba(47,50,52,0.98);
         margin-right:0;
+                  
     }
 }
 
@@ -70,8 +71,10 @@
         justify-content:center;
         align-items: center;
         height: 100%;
+    
     }
 }
+
 
 .first-header__item {
     display: inline-block;
@@ -148,7 +151,7 @@
     justify-content: center;
 
     @include tablets {
-        width: 100%;
+        width: 90%;
         margin-top:0;
         margin-right:0;
         text-align: center;
@@ -167,8 +170,12 @@
     max-width: 100%;
     height: auto;
 
+    @include tablets {
+        height: 100%;
+    }
+
     @include phones {
-      max-height: rem(256px);
+        max-height: rem(256px);
         height: auto;
     }
 }

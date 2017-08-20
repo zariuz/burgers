@@ -260,9 +260,9 @@ ul {
       height: 100%;
       left: 0;
       right: 0;
-      -webkit-transition: .6s;
-      -o-transition: .6s;
-      transition: .6s;
+      -webkit-transition: .4s;
+      -o-transition: .4s;
+      transition: .4s;
       background-color: rgba(47, 50, 52, 0.98);
       margin-right: 0; } }
 
@@ -392,7 +392,7 @@ ul {
   justify-content: center; }
   @media screen and (max-width: 768px) {
     .first-main__img {
-      width: 100%;
+      width: 90%;
       margin-top: 0;
       margin-right: 0;
       text-align: center;
@@ -410,6 +410,9 @@ ul {
   display: inline-block;
   max-width: 100%;
   height: auto; }
+  @media screen and (max-width: 768px) {
+    .first-main__img-backgraund {
+      height: 100%; } }
   @media (max-width: 480px) {
     .first-main__img-backgraund {
       max-height: 16rem;
@@ -1771,12 +1774,6 @@ ul {
   color: #fff;
   cursor: pointer;
   outline: none; }
-
-.contacts {
-  background-image: url("../img/background/background-contacts.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
 
 .contacts-map {
   width: 100%;

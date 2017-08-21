@@ -22,22 +22,22 @@
                             <nav class="first-header__navigation">
                                 <ul class="first-header__list">
                                     <li class="first-header__item">
-                                        <a class="first-header__link" href="">О нас</a>
+                                        <a class="first-header__link" href="#first" data-target="anchor">О нас</a>
                                     </li>
                                     <li class="first-header__item">
-                                        <a class="first-header__link" href="">Бургеры</a>
+                                        <a class="first-header__link" href="#burgers" data-target="anchor">Бургеры</a>
                                     </li>
                                     <li class="first-header__item">
-                                        <a class="first-header__link" href="">Команда</a>
+                                        <a class="first-header__link" href="#team" data-target="anchor">Команда</a>
                                     </li>
                                     <li class="first-header__item">
-                                        <a class="first-header__link" href="">Меню</a>
+                                        <a class="first-header__link" href="#menu" data-target="anchor">Меню</a>
                                     </li>
                                     <li class="first-header__item">
-                                        <a class="first-header__link" href="">Отзывы</a>
+                                        <a class="first-header__link" href="#reviews" data-target="anchor">Отзывы</a>
                                     </li>
                                     <li class="first-header__item">
-                                        <a class="first-header__link" href="">Контакты</a>
+                                        <a class="first-header__link" href="#contacts" data-target="anchor">Контакты</a>
                                     </li>
                                 </ul>                          
                             </nav>
@@ -223,19 +223,7 @@
                     <div class="team-text">Команда</div>
                     <ul class="team-accordeon">
                         <li class="team-accordeon__item">
-                            <a class="team-accordeon__name" href="#">Дэниэл Редклифф</a>
-                            <div class="team-accordeon__content">
-                                <div class="team-accordeon__image">
-                                    <div class="team-accordeon__picture" style="background-image: url('img/content/team.jpg')"></div>
-                                </div>
-                                <div class="team-accordeon__text">
-                                    <div class="team-accordeon__title">Оператор</div>
-                                    <div class="team-accordeon__text-content">С радостью поможет подобрать идеальный бургер и оформить заказ.</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="team-accordeon__item team-accordeon__item--activ">
-                            <a class="team-accordeon__name" href="#">Ричард Джеймс</a>
+                            <div class="team-accordeon__name">Дэниэл Редклифф</div>
                             <div class="team-accordeon__content">
                                 <div class="team-accordeon__image">
                                     <div class="team-accordeon__picture" style="background-image: url('img/content/team.jpg')"></div>
@@ -247,7 +235,7 @@
                             </div>
                         </li>
                         <li class="team-accordeon__item">
-                            <a class="team-accordeon__name" href="#">Джейк Финн</a>
+                            <div class="team-accordeon__name" href="#">Ричард Джеймс</div>
                             <div class="team-accordeon__content">
                                 <div class="team-accordeon__image">
                                     <div class="team-accordeon__picture" style="background-image: url('img/content/team.jpg')"></div>
@@ -259,7 +247,19 @@
                             </div>
                         </li>
                         <li class="team-accordeon__item">
-                            <a class="team-accordeon__name" href="#">Николай Иванов</a>
+                            <div class="team-accordeon__name" href="#">Джейк Финн</div>
+                            <div class="team-accordeon__content">
+                                <div class="team-accordeon__image">
+                                    <div class="team-accordeon__picture" style="background-image: url('img/content/team.jpg')"></div>
+                                </div>
+                                <div class="team-accordeon__text">
+                                    <div class="team-accordeon__title">Оператор</div>
+                                    <div class="team-accordeon__text-content">С радостью поможет подобрать идеальный бургер и оформить заказ.</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="team-accordeon__item">
+                            <div class="team-accordeon__name" href="#">Николай Иванов</div>
                             <div class="team-accordeon__content">
                                 <div class="team-accordeon__image">
                                     <div class="team-accordeon__picture" style="background-image: url('img/content/team.jpg')"></div>
@@ -279,7 +279,7 @@
                     <div class="menu-title__text">Меню</div>
                 </div>
                 <ul class="menu-accordeon">
-                    <li class="menu-accordeon__item menu-accordeon__item-activ">
+                    <li class="menu-accordeon__item">
                         <a class="menu-accordeon__link" href="#" style="background-image: url('img/background/for-meat.jpg')">
                             <div class="menu-accordeon__link-text">Для мясоедов</div>
                         </a>
@@ -461,7 +461,7 @@
             </section>
             <section class="section contacts">
                 <div class="contacts-map">
-                    <div id="map" style="width: 1920px; height: 643px"></div>
+                    <div id="map" style="width: 100%; height: 100%"></div>
                     <footer class="contacts-footer">
                         <div class="contacts-footer__center container">
                             <div class="contacts-footer__info">
@@ -517,7 +517,7 @@
     </div>
     <div class="navigation">
         <ul class="navigation__list">
-            <li class="navigation__item navigation__link-select">
+            <li class="navigation__item">
                 <a href="#" class="navigation__link"></a>
             </li>
             <li class="navigation__item">
@@ -546,6 +546,7 @@
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/main.js"></script>
 </body>

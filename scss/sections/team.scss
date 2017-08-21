@@ -47,14 +47,14 @@
     }
 }
 
-.team-accordeon__item--activ .team-accordeon__name:hover {
-    color: $yellow;
-}
+// .team-accordeon__item--activ .team-accordeon__name:hover {
+//     color: $yellow;
+// }
 
-.team-accordeon__item--activ:hover .team-accordeon__content {
-    transition: 0.5s;
-    height: 6.25rem;
-}
+// .team-accordeon__item--activ:hover .team-accordeon__content {
+//     transition: 0.5s;
+//     height: 6.25rem;
+// }
 
 .team-accordeon__name {
     color: #fff;
@@ -64,13 +64,23 @@
     position: relative;
     display: inline-block;
     margin-bottom: rem(15px);
+    cursor: pointer;
+
+    &:hover {
+        color: $yellow;
+        
+        &:before {
+            border-top-color: $yellow;
+    
+        }
+    }
 
     @include tablets {
         font-size: rem(24px);
     }
 
 
-    &::before {
+    &:before {
         content: '';
         position: absolute;
         bottom: 0;
@@ -79,7 +89,8 @@
         border-bottom: rem(6px) solid transparent;
         border-right:rem(6px) solid transparent;
         border-left: rem(6px) solid transparent ;
-        transition: 0.7s;
+        transition: 0.3s;
+        
     
         @include tablets {
             font-size: rem(24px);
@@ -91,9 +102,9 @@
 .team-accordeon__content {
     display: flex;
     margin-bottom: rem(10px);
-    height: 0;
+    // height: 0;
     overflow: hidden;
-    transition: 0.7s;
+    transition: 0.5s;
 
     @include tablets {
         align-items: center;
@@ -102,35 +113,35 @@
     }
 }
 
-.team-accordeon__item--activ:hover {
-    margin-bottom: rem(37px);
+// .team-accordeon__item--activ:hover {
+//     margin-bottom: rem(37px);
 
-    .team-accordeon__name {
-        color: $yellow;
+//     .team-accordeon__name {
+//         color: $yellow;
         
-        &:before {
-            bottom: rem(6px);
-            transform: rotate(180deg);
-            border-top: rem(6px) solid $yellow;
-            transition: 0.7s;
-        }
+//         &:before {
+//             bottom: rem(6px);
+//             transform: rotate(180deg);
+//             border-top: rem(6px) solid $yellow;
+//             transition: 0.7s;
+//         }
 
 
-        @include tablets {
-            bottom: 40%;
-        }
-    }
+//         @include tablets {
+//             bottom: 40%;
+//         }
+//     }
 
-    .team-accordeon__content {
-        transition: 0.7s;
-        height: rem(100px);
+//     .team-accordeon__content {
+//         transition: 0.7s;
+//         height: rem(100px);
 
-        @include tablets {
-            height: rem(200px);
-        }
+//         @include tablets {
+//             height: rem(200px);
+//         }
   
-    }
-}
+//     }
+// }
 
 .team-accordeon__image {
     width: 30%;

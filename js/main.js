@@ -79,9 +79,9 @@ $(document).ready(function () {
 })
 
 
-// Аккардеон меню!
-
 $(document).ready(function () {
+
+    // Аккардеон меню!
 
     var menuLink = $('.menu-accordeon__link');
     
@@ -98,71 +98,235 @@ $(document).ready(function () {
             menuItem.addClass('menu-accordeon__item-activ');
         }
     });
-        
-})
 
-// Смена экранов!
 
-$(document).ready(function () {
+    // Смена секций!
+
     
-    var screen = 0,
-        container = $('.maincontent'),
-        section = $('.section'),
-        inscroll = false;
 
-    $('.section:first-child').addClass('active');
+    $(function() {
+
+        var sections = $('.section'),
+            visible = $('.maincontent'),
+            inScroll = false;
+
+            var md = new MobileDetect(window.navigator.userAgent),
+            isMobile = md.mobile();
+
+        var performTransition = function (sectionEq) {
+          
+            if(!inScroll) {
+                inScroll = true;
+
+                var sectionEq = sectionEq - 1 ;
+                var position = (sectionEq * -100) + '%';
+                
+                visible.css({
+                    'transform' : 'translateY(' + position + ')',
+                    '-webkit-transform' : 'translateY(' + position + ')'
+                })
     
-    $('body').on('mousewheel', function(event) {
+                sections.eq(sectionEq).addClass('active')
+                .siblings().removeClass('active');
 
-        var activeSection = section.filter('.active');
-        
-        if (!inscroll) {
-            inscroll = true;
-            
-            if (event.deltaY > 0) {
-
-                if (activeSection.prev().length) {
-                    screen--;
-                }
-
-            } else {
-
-                if (activeSection.next().length) {
-                    screen++;
-                }
+                setTimeout(function() {
+                    inScroll = false;
+                    $('.navigation__item').eq(sectionEq).addClass('active')
+                    .siblings().removeClass('active');
+                }, 1300)
 
             }
-        
-        }    
-
-        var position = (-screen * 100) +'%';
-
-        section.eq(screen).addClass('active').siblings().removeClass('active');
-        container.css('top', position);
-
-        setTimeout(function() {
-            inscroll = false;
-        }, 1300);
-    });
-
-    // navigation__link-select
-    var navLink = $('.navigation__link'),
-        navItem = $('.navigation__item');
-
-        navItem.eq(section).addClass('navigation__link-select')
-        .siblings().removeClass('navigation__link-select');
+                
+        }
     
-});
+        var defineSections = function(sections) {
+            var activeSection = sections.filter('.active');
+            return {
+                activeSection : activeSection,
+                nextSection : activeSection.next(),
+                prevSection : activeSection.prev()
+            }
+        }
 
-// Навигация по меню!
+        var scrollToSection = function(direction) {
+            var section = defineSections(sections);
+            
+            if (direction == 'up' && section.nextSection.length) { /*вниз*/
+                
+                performTransition(section.nextSection.index());
+            } 
+            
+            if (direction == 'down' && section.prevSection.prev().length) { /*вверх*/   
+                performTransition(section.prevSection.index());
+            }
 
-$(document).ready(function () {
+        }
 
-    $('a[data-target^="anchor"]').bind('click.smoothscroll', function() {
-        var target = $(this).attr('href'),
-            bl_top = $(target).offset().top;
-        $('body, html').animate({scrollTop: bl_top}, 700);
-        return false;
+
+
+        $('.wrapper').on({
+            'wheel': function(e) {
+                var deltaY = e.originalEvent.deltaY,
+                direction = "";
+
+                var direction = deltaY > 0 
+                ? direction = 'up'
+                : direction = 'down';
+
+                scrollToSection(direction);
+            },
+
+            touchmove: function(e) {
+                e.preventDefault();
+            }
+        })
+            
+
+        $(document).on('keydown', function (e) {
+            var section = defineSections(sections);
+            
+            
+            switch (e.keyCode) {
+                case 38: /*вверх*/
+                    if (section.prevSection.prev().length) {
+                        performTransition(section.prevSection.index());
+                    }
+                    break;
+                case 40: /*вниз*/
+                    if (section.nextSection.length) {
+                        performTransition(section.nextSection.index());
+                    }
+                    break;
+            }
+
+
+        })
+
+        // Меню навигации
+            
+
+        $('.navigation__link').on('click', function (e) {
+        
+            e.preventDefault();
+
+            var elem = $(e.target),
+            bullets = $('.navigation__item'),
+            bulletTarget = elem.closest(bullets),            
+            bulletEq = bulletTarget.index();
+
+            performTransition(bulletEq + 1);
+        })
+
+        $('.first-header__link').on('click', function (e) {
+            
+            e.preventDefault();
+
+            var elem = $(e.target),
+            elemId = elem.attr('href'),
+            sectionEq = parseInt(sections.filter(elemId).index());
+            performTransition(sectionEq);  
+            
+        })
+        
+        // Движение по секциям 
+
+        $('.first-next__down').on('click', function(e) {
+            e.preventDefault();
+            performTransition(2);
+        });
+
+        $('.order-link').on('click', function(e) {
+            e.preventDefault();
+            performTransition(7);
+        });
+
+        if (isMobile) {
+            $(window).swipe({
+                swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+                    scrollToSection(direction);
+                }
+            });            
+        }
+        
+    })
+
+
+
+    //Слайдер
+
+
+    function slider(test) {
+        
+        var sliderBurger = $('.burger-box'),
+            sliderList = sliderBurger.find('.burger-box__menu'),
+            sliderItem = sliderBurger.find('.burger-box__item'),
+            sliderActive = sliderItem.filter('.burger-box__item-active'),
+            nextItem = sliderActive.next(),
+            nextNumberItem = nextItem.index(),
+            backItem = sliderActive.prev(),
+            backNumberItem = backItem.index(),
+            slideTime = 700;
+        
+        
+        if (test == 'next') {
+
+            if (!nextItem.length) {
+                nextItem = sliderItem.first();
+                nextNumberItem = nextItem.index();
+            }
+            var next = -nextNumberItem * 100 + '%';
+            sliderList.stop(true).animate({
+                'left': next
+            }, slideTime, function () {
+                sliderActive.removeClass('burger-box__item-active');
+                nextItem.addClass('burger-box__item-active');
+            });
+        }
+        
+        if (test == 'back') {
+
+            if (!backItem.length) {
+                backItem = sliderItem.last();
+                backNumberItem = backItem.index();
+            }
+            var back = -backNumberItem * 100 + '%';
+
+            sliderList.stop(true).animate({
+                'left': back
+            }, slideTime, function () {
+                sliderActive.removeClass('burger-box__item-active');
+                backItem.addClass('burger-box__item-active');
+            });
+        }
+    }
+        
+        
+    $('.burger-box__right').on('click', function () {
+        slider('next');
     });
+
+    $('.burger-box__left').on('click', function () {
+        slider('back');
+    });
+
+
+    // Модалки
+
+    $(function() {
+        $("[data-fancybox]").fancybox({
+            smallBtn: false,
+            toolbar: false
+        });
+            
+        $('.modal__close').on('click', function(e) {
+            e.preventDefault();
+            $.fancybox.close()
+        })
+
+    })
+    
 
 })
+
+
+

@@ -114,3 +114,67 @@
         background-color: darken($dark, 5%);
     }
 }
+
+
+.popup {
+    display: none;
+}
+
+
+.comments__popup {
+    position: absolute;
+}
+
+// Модалки
+
+.modal {
+    border-radius: 5px;
+    background-color: #fff;
+    min-width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: rem(30px) rem(20px);
+    z-index: 300;
+    position: relative;
+    max-width: rem(470px);
+
+    display: none;
+
+    &__title {
+        font-family: 'Gagalin';
+        color: $dark;
+        margin-bottom: rem(15px);
+    }
+
+
+    &__text {
+        color: $dark;
+
+        & p {
+            margin: 0;
+            line-height: rem(24px);
+        }
+    }
+    
+
+    &__close {
+        position: absolute;
+        top: rem(20px);
+        right: rem(20px);
+        background: url('../img/icons/close_red.svg') 50% 50% no-repeat;
+        opacity: 0.7;
+        width: rem(15px);
+        height: rem(15px);
+        cursor: pointer;
+        transition: opacity 0.5s;
+        border: none;
+
+        &:hover {
+            opacity: 1;
+        }
+
+    }
+}
+
+

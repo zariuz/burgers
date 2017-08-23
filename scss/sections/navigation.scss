@@ -66,7 +66,7 @@
     }
 }
 
-.navigation__link-select .navigation__link:after {
+.active .navigation__link:after {
     transform: translate(0);
     width: rem(16px);
     height: rem(16px);

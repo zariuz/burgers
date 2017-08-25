@@ -176,5 +176,63 @@ $(document).ready(function () {
 
 })
 
+// Форма 
+var inp = $('input');
+
+$('.form-order__input > .form-order__input-name').mask('+7 (999) 999-9999');
+
+
+$('.form-main__form').on('submit', function(e) {
+    e.preventDefault();
+    var $form = $(this),
+        trigger = 0,
+        ajaxForm = function () {
+        $.ajax({
+            type: 'POST',
+            url: '../server.php',
+            data: $form.serialize(),
+            dataType: 'JSON',
+            cache: false,
+            success: function (msg) {
+                $('.form-modal').css('display', 'block').animate({
+                    'opacity': 1
+                }, 300);
+            },
+            error: function (jqXHR, textStatus) {
+                console.log('Request failed: not server');
+            }
+        })
+    };    
+
+    inp.each(function () {
+        var $this = $(this);
+
+        inp.addClass('validation');
+
+        if ( $this.hasClass('validation') ) {
+            if ( $this.val() === "" || $this.val() === " " ) {
+                $this.css('border', '2px solid red');
+                return trigger = 1;
+            }
+        }
+    })
+    
+    if (trigger === 0) {
+        ajaxForm();
+        console.log('success');
+    };
+});
+
+$('.form-modal__but').on('click', function(e) {
+    e.preventDefault();
+    $('.form-modal').animate({
+        'opacity': 0
+    }, 500, function () {
+        $('.form-modal').css('display', 'none');
+    });
+    $('form').get(0).reset();
+    inp.removeAttr('style');
+})
+
 
 

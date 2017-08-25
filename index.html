@@ -15,7 +15,7 @@
 <body>
     <div class="wrapper">
         <div class="maincontent">
-            <section class="section first active" id="main-section">
+            <section class="section first active">
                 <div class="container">
                     <header class="first-header">
                         <a href="#" class="first-header__logo"></a>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section best" id="strengths-section">
+            <section class="section best">
                 <div class="container">
                     <h2 class="best-text">Мы лучшие</h2>
                     <ul class="best-list">
@@ -104,7 +104,7 @@
                     </ul>
                 </div>
             </section>
-            <section class="section burgers" id="burgers-section">
+            <section class="section burgers">
                 <div class="container burgers-center">
                     <div class="burger-box">
                         <ul class="burger-box__menu">
@@ -510,7 +510,7 @@
                     </div>
                 </div>
             </section>
-            <section class="section team" id="team-section">
+            <section class="section team">
                 <div class="team-main">
                     <div class="team-text">Команда</div>
                     <ul class="team-accordeon">
@@ -566,7 +566,7 @@
                     </ul>
                 </div>
             </section>
-            <section class="section menu" id="menu-section">
+            <section class="section menu">
                 <div class="menu-title">
                     <div class="menu-title__text">Меню</div>
                 </div>
@@ -606,7 +606,7 @@
                     </li>
                 </ul>
             </section>
-            <section class="section reviews" id="comments-section">
+            <section class="section reviews">
                 <ul class="reviews__list">
                     <li class="reviews__item">
                         <div class="review__photo" style="background-image: url(img/content/reviews/1.jpg);"></div>
@@ -730,44 +730,44 @@
                     </li>
                 </ul>
             </section>
-            <section class="section form" id="delivery-section">
+            <section class="section form">
                 <div class="container">                   
                     <div class="form-title">Закажите Доставку</div>
                     <div class="form-main">
-                        <form action="" class="form-main__form">
+                        <form class="form-main__form" action="server.php" method="post">
                             <div class="form-order__left">
                                 <div class="form-order__row">
                                     <label for="input-name" class="form-order__input">
                                         <div class="form-order__input-text">Имя</div>
-                                        <input type="text" class="form-order__input-name" id="input-name" name="name">
+                                        <input type="text" class="form-order__input-name" id="input-name" name="data-name">
                                     </label>
                                     <label for="input-phone" class="form-order__input">
                                         <div class="form-order__input-text">Телефон</div>
-                                        <input type="text" class="form-order__input-name" id="input-phone" name="phone">
+                                        <input type="text" class="form-order__input-name" id="input-phone" name="data-phone">
                                     </label>
                                 </div>
                                 <div class="form-order__row">
                                     <label for="input-street" class="form-order__input">
                                         <div class="form-order__input-text">Улица</div>
-                                        <input type="text" class="form-order__input-name" id="input-street" name="street">
+                                        <input type="text" class="form-order__input-name" id="input-street" name="data-street">
                                     </label>
                                 </div>
                                 <div class="form-order__row">
                                     <label for="input-house" class="form-order__input">
                                         <div class="form-order__input-text">Дом</div>
-                                        <input type="text" class="form-order__input-name" id="input-house" name="house">
+                                        <input type="text" class="form-order__input-name" id="input-house" name="data-home">
                                     </label>
                                     <label for="input-block" class="form-order__input">
                                         <div class="form-order__input-text">Корпус</div>
-                                        <input type="text" class="form-order__input-name" id="input-block" name="block">
+                                        <input type="text" class="form-order__input-name" id="input-block" name="data-housing">
                                     </label>
                                     <label for="input-room" class="form-order__input">
                                         <div class="form-order__input-text">Квартира</div>
-                                        <input type="text" class="form-order__input-name" id="input-room" name="room">
+                                        <input type="text" class="form-order__input-name" id="input-room" name="data-apart">
                                     </label>
                                     <label for="input-floor" class="form-order__input">
                                         <div class="form-order__input-text">Этаж</div>
-                                        <input type="text" class="form-order__input-name" id="input-floor" name="floor">
+                                        <input type="text" class="form-order__input-name" id="input-floor" name="data-floor">
                                     </label>
                                 </div>
                             </div>
@@ -776,44 +776,44 @@
                                 <div class="form-order__row">
                                     <label for="input-comment" class="form-order__input">
                                         <div class="form-order__input-text">Комментарий</div>
-                                        <textarea name="comment" id="input-comment" class="form-order__input-textarea"></textarea>
+                                        <textarea name="data-comment" id="input-comment" class="form-order__input-textarea"></textarea>
                                     </label>
                                 </div>
                                 <div class="form-order__row">
                                     <label for="input-radio-change" class="form-order__radio">
-                                        <input id="input-radio-change" type="radio" name="change" class="form-order__radio-btn">
+                                        <input id="input-radio-change" type="radio" name="data-surrender" value="yes" class="form-order__radio-btn">
                                         <div class="form-order__radio-none"></div>
                                         <div class="form-order__input-radio--text">Потребуется сдача</div>
                                     </label>
                                     <label for="input-radio-change2" class="form-order__radio">
-                                        <input id="input-radio-change2" type="radio" name="change" class="form-order__radio-btn">
+                                        <input id="input-radio-change2" type="radio" name="data-surrender" value="no" class="form-order__radio-btn">
                                         <div class="form-order__radio-none"></div>
                                         <div class="form-order__input-radio--text">Оплата по карте</div>
                                     </label>
                                 </div>
                                 <div class="form-order__row">
                                     <label for="input-call" class="form-order__radio">
-                                        <input id="input-call" type="checkbox" name="call" class="form-order__check-btn">
+                                        <input id="input-call" type="checkbox" name="data-callback" value="1" class="form-order__check-btn">
                                         <div class="form-order__check-none"></div>
                                         <div class="form-order__input-text">Не перезванивать</div>
                                     </label>
                                 </div>
                                 <div class="form-order__row">
-                                    <button class="order-form__btn" type="submit">Заказать</button>
+                                    <button class="order-form__btn" type="submit" name="sub">Заказать</button>
                                     <button class="order-form__btn-res" type="reset">Очистить</button>
                                 </div>
                             </div>
-                            <div class="modal-form">
-                                <div class="modal-form__text">
-                                    Сообщение отправлено
+                            <div class="form-modal">
+                                <div class="form-modal__content">
+                                    <p class="form-modal__text">Спасибо за заказ</p>
+                                    <a href="#" class="order-link">Закрыть</a>
                                 </div>
-                                <button class="modal-form__btn order-link" type="button">Закрыть</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </section>
-            <section class="section contacts" id="map-section">
+            <section class="section contacts">
                 <div class="contacts-map">
                     <div id="map" style="width: 100%; height: 100%"></div>
                     <footer class="contacts-footer">
